@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .input 
+        {
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        #input 
+        {
+            border-radius: 15px;
+            width: 100%;
+            padding: 10px 10px;
+            margin: 10px 0;
+            outline: 0px;
+        }
+        table
+        {
+            border-radius: 5px;
+        }
+        tr 
+        {
+            text-align: center;
+        }
+        tr th,
+        tr td 
+        {
+            padding: 20px 10px;
+        }
+        .outer 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .content 
+        {
+            padding: 10px 40px 20px 40px;
+            background: rgb(253, 176, 33);
+            box-shadow: 0px 0px 10px black;
+        }
+        button 
+        {
+            cursor: pointer;
+            padding: 10px 20px;
+            background: linear-gradient(rgb(253, 176, 33), white,rgb(253, 176, 33));
+            outline: none;
+            border: .1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="outer">
+        <div class="content">
+            <div class="input">
+                <input type="text" placeholder="Enter your name" class="name" id="input">
+                <input type="text" placeholder="Enter your class" class="class" id="input">
+                <input type="text" placeholder="Enter your age" class="age" id="input">
+                <input type="text" placeholder="Enter your roll No" class="roll-no" id="input">
+                <button id="add" >ADD</button>
+            </div>
+            <div class="table">
+                <table id="main-table" cellspacing="0" border="1px">
+                    <tr>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>Age</th>
+                        <th>Roll No</th>
+                    </tr>
+                    <tr>
+                        <td>Hassan</td>
+                        <td>12</td>
+                        <td>19</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Hassan</td>
+                        <td>12</td>
+                        <td>20</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Hassan</td>
+                        <td>12</td>
+                        <td>18</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <script src="sheet.js"></script>
+
+    <script>
+        
+        $("document").ready(function () {
+    $("#add").click(function () {
+        var name = $(".name").val();
+        var clas = $(".class").val();
+        var age = $(".age").val();
+        var rollno = $(".roll-no").val();
+        $("#main-table").append("<tr>" +
+            "<td>" + name + "</td>" +
+            "<td>" + clas + "</td>" +
+            "<td>" + age + "</td>" +
+            "<td>" + rollno + "</td>" +
+            "<tr>")
+    })
+})
+
+    </script>
+</body>
+</html>
