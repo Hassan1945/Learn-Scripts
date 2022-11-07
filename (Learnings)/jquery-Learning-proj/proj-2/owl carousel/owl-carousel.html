@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owl Carousel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.green.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .item {
+            text-align: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="owl-carousel owl-theme">
+            <div class="item"><img src="images/img1.jpg" alt="">
+                <p>Hellew</p>
+            </div>
+            <div class="item" data-merge="2"><img src="images/img2.jpg" alt="">         <!--iss per mein ny data-merge="2" iss ka matalab ye ab 2 slide ki jagah lega-->
+                <p>Hellew</p>
+            </div>
+            <div class="item"><img src="images/img3.jpg" alt="">
+                <p>Hellew</p>
+            </div>
+            <div class="item"><img src="images/img4.jpg" alt="">
+                <p>Hellew</p>
+            </div>
+            <div class="item"><img src="images/img5.jpg" alt="">
+                <p>Hellew</p>
+            </div>
+            <div class="item"><img src="images/img6.jpg" alt="">
+                <p>Hellew</p>
+            </div>
+            <div class="item"><img src="images/img7.jpg" alt="">
+                <p>Hellew</p>
+            </div>
+            <div class="item"><img src="images/img8.jpg" alt="">
+                <p>Hellew</p>
+            </div>
+            <div class="item"><img src="images/img9.jpg" alt="">
+                <p>Hellew</p>
+            </div>
+            <div class="item"><img src="images/img4.jpg" alt="">
+                <p>Hellew</p>
+            </div>
+            <div class="item"><img src="images/img5.jpg" alt="">
+                <p>Hellew</p>
+            </div>
+            <div class="item"><img src="images/img6.jpg" alt="">
+                <p>Hellew</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+
+        $("document").ready(function () {
+            $('.owl-carousel').owlCarousel({
+                items: 4,               // kitney items show hon gy
+                margin: 10,             // items ky between gap kitna ho
+                loop: true,             // bar bar bar bar chalta hi rehy ga
+                nav: true,              // navigation valy arrow < and > ye two buttons add krny ky liye
+                mouseDrag: true,        // default true hi hoti hai matlab mouse se bhi drag kr skty hain
+                touchDrag: true,        // default true hi hoti hai mobile and tablets ky liye hota hai
+                pullDrag: true,         // default true hi hoti hai iss ka matlab hia ky app aik hi jhatkey mein drag kr skty hain
+                freeDrag: true,         // default false hoti hai kafi zeyada drag aik hi bar mien krny ky liye 
+                stagePadding: 50,       // ye hota hai ky next and previous slides bhi show krwany ky liye
+                responsive: {           // iss mein hum apny carousel ko responsive krty hain
+                    1000: {             // iss ka matlab hai ky @media(max-width:1000){} matlab ky 1000 and iss se above ky liye ye ho
+                        items: 4,
+                        nav: true
+                    },
+                    768: {
+                        items: 3,
+                        stagePadding: 40
+                    },
+                    480: {
+                        items: 2,
+                        nav: false,
+                        stagePadding: 20
+                    },
+                    50: {
+                        items: 1,
+                        margin: 0,
+                        nav: true,
+                        stagePadding: 0
+                    }
+                },
+                autoplay: true,         // iss ki default value false hoti hai
+                autoplayTimeout: 2000,   // iss ki default value 5000ms hoti hai
+                rtl: true,              // is ki value default false hoti hai is ka matlab hai ky ye humari silde ki direction ko opposite side mein chalaey ga
+                                        // hum is mien animation bhi laga skty hain but uss ky liye hum ko items 1 hi krni hogi to uss ky liye owl carousel ki website ki demos dekh lo aur is ky liye hum ko pehle head mein link mein animate.css ki file include krni hogi file location is owl carousel>docs>assets>css>animate.css
+            })
+        })
+    </script>
+</body>
+
+</html>

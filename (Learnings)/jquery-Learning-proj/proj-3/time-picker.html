@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Picker</title>
+    <link rel="stylesheet" href="jquery-timepicker/jquery.timepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            padding: 10px;
+            font-size: 30px;
+        }
+
+        span {
+            margin: 50px auto;
+            border: 1px solid #000;
+            display: block;
+            width: fit-content;
+            padding: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Time Picker</h2>
+
+    <hr>
+
+    <span>
+        <input type="text" id="timepicker">
+        <i class="fa-solid fa-caret-down"></i>
+    </span>
+
+    <script src="jquery-timepicker/jquery.min.js"></script>
+    <script src="jquery-timepicker/jquery.timepicker.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // h:	12 hour without leading 0.  |	hh:	12 hour with leading 0.
+            // H:	24 hour without leading 0.  |	HH:	24 hour with leading 0.
+            // m:	minutes without leading 0.  |	mm:	minutes with leading 0.
+            // s:	seconds without leading 0.  |	ss:	seconds with leading 0.
+            // p:	AM or PM
+
+            $('input#timepicker').timepicker({
+                timeFormat: 'hh:mm p',                  // ye humein bta rha hy ky input mein time ka format kya ho
+                interval: 15,                           // ye humein bta rha hy ky aik selective time ky baad next jo time hai wo kitna baad mein mein ho matlab yaha per interval 15 hai iss ka matlab hai ky 12:00 show hoga phir next value 12:15 and phir 12:30 show hogi matlab pehly vale mein 15 add ho rhy hein
+                scrollbar: true,                        // ye scrollbar show krwany ky liye
+                minTime: '6',                           // ye hum se puchta hai ky dropdown mein sab se pehly konsa number show ho ye 6:00AM likha hua hai
+                maxTime: '5pm',                         // ye 5:00Pm likha hua hai aur hum ny agr min mein koi value di hai to hum next value uss se agli hi dein skty hain mein like hum next day ki value ni de skty Example minTime: 5pm and maxTime: 6am to ye wrong hain Q ky jo 6am hongy 5pm ky baad wo next day ky hon gy
+                defaultTime: '10',                      // ab default value 10:00 Am hai dropdown mein next value 10:00AM se hi start hogi but min aur max ka kya hoga to iss mein default value ky nazdeek value hai max ki 5pm Q ky min ki to 6am to wo kafi bara chakkar kaat kr aye ga aur wo next day mein chala jaye ga to error hoga to iss liye pehly 5pm tak chale gi phir min start ho jaye gi
+                dynamic: false,                         // ye true ho ga to default hi min value hogi aur ab mein ny false kiya hua hai to iss ka matlab ky dropdown mein first value 6AM hi show hogi aur last value 5PM
+                // dropdown: false,                     // ye dropdown ko display ni kre ga
+            });
+        });
+    </script>
+</body>
+
+</html>
